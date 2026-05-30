@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📈 Finance Dashboard</h1>
+    <div class="header-bar">
+      <nav>
+        <a href="#undervalued">Undervalued</a>
+        <a href="#ipos">Upcoming IPOs</a>
+        <a href="#earnings">Earnings</a>
+        <a href="#dividends">Dividends</a>
+      </nav>
+      <div class="controls">
+        <label for="source-select">Source:</label>
+        <select id="source-select">
+          <option value="yahoo" selected>Yahoo Finance</option>
+          <option value="fmp">Financial Modeling Prep</option>
+          <option value="alphavantage">Alpha Vantage</option>
+        </select>
+        <button id="refresh-btn">🔄 Refresh</button>
+      </div>
+    </div>
+    <p id="last-updated" class="subtitle"></p>
+  </header>
+
+  <main>
+    <section id="undervalued">
+      <h2>🔍 Top 20 Undervalued Stocks</h2>
+      <p class="section-desc">Stocks with low P/E ratio, trading below intrinsic value estimates.</p>
+      <div class="table-wrap">
+        <table id="undervalued-table">
+          <thead><tr><th>Symbol</th><th>Name</th><th>Price</th><th>P/E Ratio</th><th>P/B Ratio</th><th>52W Low</th><th>52W High</th></tr></thead>
+          <tbody><tr><td colspan="7" class="loading">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="ipos">
+      <h2>🚀 Upcoming IPOs (Next 60 Days)</h2>
+      <p class="section-desc">Companies expected to go public in the next 60 days.</p>
+      <div class="table-wrap">
+        <table id="ipo-table">
+          <thead><tr><th>Company</th><th>Symbol</th><th>Exchange</th><th>IPO Date</th><th>Price Range</th></tr></thead>
+          <tbody><tr><td colspan="5" class="loading">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="earnings">
+      <h2>📅 Upcoming Earnings (Next 60 Days)</h2>
+      <p class="section-desc">Notable companies reporting earnings soon.</p>
+      <div class="table-wrap">
+        <table id="earnings-table">
+          <thead><tr><th>Symbol</th><th>Company</th><th>Earnings Date</th><th>EPS Est.</th><th>Revenue Est.</th></tr></thead>
+          <tbody><tr><td colspan="5" class="loading">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="dividends">
+      <h2>💰 Top 10 Dividend Stocks (Last 3 Years)</h2>
+      <p class="section-desc">Consistent dividend payers with strong yield over the past 3 years.</p>
+      <div class="table-wrap">
+        <table id="dividend-table">
+          <thead><tr><th>Symbol</th><th>Name</th><th>Price</th><th>Dividend Yield</th><th>Annual Dividend</th><th>Payout Ratio</th></tr></thead>
+          <tbody><tr><td colspan="6" class="loading">Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data provided for informational purposes only. Not financial advice.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
